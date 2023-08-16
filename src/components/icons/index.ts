@@ -36,6 +36,13 @@ export { default as NotifCheck } from './NotifCheck';
 export { default as NotifCheckInfo } from './NotifCheckInfo';
 export { default as NotifCheckError } from './NotifCheckError';
 
+export { default as ArticleIcon } from "./ArticleIcon";
+export { default as HomeIcon } from "./HomeIcon";
+export { default as VideosIcon } from "./VideosIcon";
+export { default as CollapsIcon } from "./CollapsIcon";
+export { default as LogoIcon } from "./Logo";
+
+
 
 
 

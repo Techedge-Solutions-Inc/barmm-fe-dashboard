@@ -20,6 +20,10 @@ interface MenuItem {
     link: string;
 }
 
+interface SidebarProps {
+    onToggleCollapse: () => {};
+}
+
 const menuItems: MenuItem[] = [
     { id: 1, label: "Home", icon: HomeIcon, link: "/" },
     { id: 2, label: "Manage Posts", icon: ArticleIcon, link: "/home" },
@@ -27,7 +31,7 @@ const menuItems: MenuItem[] = [
     { id: 4, label: "Manage Tutorials", icon: VideosIcon, link: "/tutorials" },
 ];
 
-const Sidebar: React.FC = () => {
+const Sidebar: React.FC<SidebarProps> = ({ onToggleCollapse }) => {
     const [toggleCollapse, setToggleCollapse] = useState<boolean>(false);
     const [isCollapsible, setIsCollapsible] = useState<boolean>(false);
 
@@ -41,7 +45,7 @@ const Sidebar: React.FC = () => {
     );
 
     const wrapperClasses = classNames(
-        "h-screen px-4 pt-8 pb-4 bg-light flex justify-between flex-col",
+        "h-[calc(100vh-40px)] px-4 pt-8 pb-4 bg-light flex justify-between flex-col",
         {
             ["w-80"]: !toggleCollapse,
             ["w-20"]: toggleCollapse,
@@ -70,11 +74,12 @@ const Sidebar: React.FC = () => {
 
     const handleSidebarToggle = () => {
         setToggleCollapse(!toggleCollapse);
+        onToggleCollapse();
     };
 
     return (
         <div
-            className={wrapperClasses}
+            className={classNames(wrapperClasses, 'rounded-[16px]')}
             onMouseEnter={onMouseOver}
             onMouseLeave={onMouseOver}
             style={{ transition: "width 300ms cubic-bezier(0.2, 0, 0, 1) 0s" }}
@@ -102,10 +107,10 @@ const Sidebar: React.FC = () => {
                 </div>
 
                 <div className="flex flex-col items-start mt-24">
-                    {menuItems.map(({ icon: Icon, ...menu }) => {
+                    {menuItems.map(({ icon: Icon, ...menu }, index) => {
                         const classes = getNavItemClasses(menu);
                         return (
-                            <div className={classes}>
+                            <div className={classes} key={index}>
                                 <Link href={menu.link} className="flex py-4 px-3 items-center w-full h-full">
                                     <div style={{ width: "2.5rem" }}>
                                         <Icon />

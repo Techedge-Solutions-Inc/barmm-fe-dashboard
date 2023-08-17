@@ -2,7 +2,7 @@
 import classNames from "classnames";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
-import React, { useState, useMemo, MouseEventHandler } from "react";
+import React, { useState, useMemo, MouseEventHandler, useEffect } from "react";
 import {
     ArticleIcon,
     CollapsIcon,
@@ -11,7 +11,10 @@ import {
     LogoutIcon,
     UsersIcon,
     VideosIcon,
+    ShieldIcon,
+    DashboardIcon
 } from "../icons";
+import CollapsIconOutline from "../icons/CollapsIconOutline";
 
 interface MenuItem {
     id: number;
@@ -25,10 +28,8 @@ interface SidebarProps {
 }
 
 const menuItems: MenuItem[] = [
-    { id: 1, label: "Home", icon: HomeIcon, link: "/" },
-    { id: 2, label: "Manage Posts", icon: ArticleIcon, link: "/home" },
-    { id: 3, label: "Manage Users", icon: UsersIcon, link: "/users" },
-    { id: 4, label: "Manage Tutorials", icon: VideosIcon, link: "/tutorials" },
+    { id: 1, label: "Dashboard", icon: DashboardIcon, link: "/client/dashboard" },
+    { id: 2, label: "Claims", icon: ShieldIcon, link: "/client/claims" },
 ];
 
 const Sidebar: React.FC<SidebarProps> = ({ onToggleCollapse }) => {
@@ -38,14 +39,8 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleCollapse }) => {
     const router = useRouter();
     const pathname = usePathname();
 
-
-    const activeMenu = useMemo(
-        () => menuItems.find((menu) => menu.link === pathname),
-        [pathname]
-    );
-
     const wrapperClasses = classNames(
-        "h-[calc(100vh-40px)] px-4 pt-8 pb-4 bg-light flex justify-between flex-col",
+        "h-[calc(100vh-40px)] pt-8 pb-4 bg-light flex justify-between flex-col",
         {
             ["w-80"]: !toggleCollapse,
             ["w-20"]: toggleCollapse,
@@ -59,15 +54,6 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleCollapse }) => {
         }
     );
 
-    const getNavItemClasses = (menu: Partial<MenuItem>) => {
-        return classNames(
-            "flex items-center cursor-pointer hover:bg-light-lighter rounded w-full overflow-hidden whitespace-nowrap",
-            {
-                ["bg-light-lighter"]: activeMenu?.id === menu.id,
-            }
-        );
-    };
-
     const onMouseOver: MouseEventHandler<HTMLDivElement> = () => {
         setIsCollapsible(!isCollapsible);
     };
@@ -79,9 +65,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleCollapse }) => {
 
     return (
         <div
-            className={classNames(wrapperClasses, 'rounded-[16px]')}
-            onMouseEnter={onMouseOver}
-            onMouseLeave={onMouseOver}
+            className={classNames(wrapperClasses, 'rounded-[16px] relative')}
             style={{ transition: "width 300ms cubic-bezier(0.2, 0, 0, 1) 0s" }}
         >
             <div className="flex flex-col">
@@ -96,27 +80,33 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleCollapse }) => {
                             Logo
                         </span>
                     </div>
-                    {isCollapsible && (
+                    {/* {isCollapsible && (
                         <button
                             className={collapseIconClasses}
                             onClick={handleSidebarToggle}
                         >
                             <CollapsIcon />
                         </button>
-                    )}
+                    )} */}
                 </div>
 
                 <div className="flex flex-col items-start mt-24">
                     {menuItems.map(({ icon: Icon, ...menu }, index) => {
-                        const classes = getNavItemClasses(menu);
                         return (
-                            <div className={classes} key={index}>
+                            <div className={classNames('flex items-center cursor-pointer hover:bg-light-lighter w-full overflow-hidden whitespace-nowrap px-4',
+                                    pathname.includes(menu.link) ? 'bg-[#E8F5F0] border-l-[5px] border-[#009865]' : ''
+                                )}
+                                key={index}
+                            >
                                 <Link href={menu.link} className="flex py-4 px-3 items-center w-full h-full">
-                                    <div style={{ width: "2.5rem" }}>
-                                        <Icon />
+                                    <div>
+                                        {pathname.includes(menu.link) ? <Icon /> : <Icon stroke={'#4E4E4E'}/> }
                                     </div>
                                     {!toggleCollapse && (
-                                        <span className={classNames("text-md font-medium text-text-light")}>
+                                        <span className={classNames("text-[14px] font-[700] ml-4", 
+                                            pathname.includes(menu.link) ? 'text-[#009865]' : 'text-[#212121]'
+                                        )}
+                                        >
                                             {menu.label}
                                         </span>
                                     )}
@@ -126,16 +116,38 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleCollapse }) => {
                     })}
                 </div>
             </div>
-
-            <div className={`${getNavItemClasses({})} px-3 py-4`}>
-                <div style={{ width: "2.5rem" }}>
-                    <LogoutIcon />
+            
+            <div>
+                <div className={'flex items-center cursor-pointer hover:bg-light-lighter rounded w-full overflow-hidden whitespace-nowrap mb-6 mt-6'}>
+                    <div className={classNames('flex py-4 px-3 items-center w-full h-full', toggleCollapse ? 'justify-center' : 'px-8')}>
+                        <div>
+                            <LogoutIcon />
+                        </div>
+                        {!toggleCollapse && (
+                            <span className={classNames("text-[14px] font-[700] ml-4")}>
+                                Logout
+                            </span>
+                        )}
+                    </div>
                 </div>
-                {!toggleCollapse && (
-                    <span className={classNames("text-md font-medium text-text-light")}>
-                        Logout
-                    </span>
-                )}
+
+                <div className={'border-[2px] border-[#CACECD] mx-5'}></div>
+
+                <div className={'flex items-center cursor-pointer hover:bg-light-lighter rounded w-full overflow-hidden whitespace-nowrap mb-6 mt-6'} 
+                    onClick={handleSidebarToggle}
+                >
+                    <div className={classNames('flex py-4 px-3 items-center w-full h-full', toggleCollapse ? 'justify-center' : 'px-8')}>
+                        <div>
+                            <CollapsIconOutline />
+                        </div>
+                        {!toggleCollapse && (
+                            <span className={classNames("text-[14px] font-[700] ml-4")}>
+                                Collapse
+                            </span>
+                        )}
+                    </div>
+                </div>
+
             </div>
         </div>
     );

@@ -4,7 +4,7 @@ import defaultTheme from 'tailwindcss/defaultConfig';
 const config: Config = {
   // add this section to resolve
   corePlugins: {
-    preflight: false
+    preflight: true
   },
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',

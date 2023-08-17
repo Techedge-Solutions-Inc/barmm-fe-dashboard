@@ -17,25 +17,20 @@ const LogoutIcon: React.FC<Props> = ({
     ...rest
 }) => (
 
-    <div style={{ width, height }} className={className}>
-        <svg
-            width='100%'
-            height='100%'
-            viewBox="0 0 21 18"
-            fill={fill}
-            xmlns='http://www.w3.org/2000/svg'
-            {...rest}
-        >
-
-            <path
-                d="M15.5 13l4-4m0 0l-4-4m4 4h-14m6 4v1a3 3 0 01-3 3h-4a3 3 0 01-3-3V4a3 3 0 013-3h4a3 3 0 013 3v1"
-                stroke={stroke}
-                strokeWidth={strokeWidth}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-            />
-        </svg>
-    </div>
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={18}
+        height={18}
+        fill="none"
+    >
+        <path
+        stroke="#4E4E4E"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.5}
+        d="M13.444 12.5 17 9m0 0-3.556-3.5M17 9H4.556m5.333 4.5v.875c0 1.45-1.194 2.625-2.667 2.625H3.667C2.194 17 1 15.825 1 14.375V3.625C1 2.175 2.194 1 3.667 1h3.555C8.695 1 9.89 2.175 9.89 3.625V4.5"
+        />
+    </svg>
 );
 
 export default LogoutIcon;

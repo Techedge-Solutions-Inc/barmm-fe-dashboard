@@ -1,8 +1,20 @@
-import React from 'react';
-import Layout from '../../components/SideNav/Layout';
+'use client';
+import React, { useState } from 'react';
+import Sidebar from '@/components/SideNav/Layout';
+import TopBar from '@/components/TopBar/TopBar';
 
 const Posts: React.FC = () => {
-  return <Layout>posts</Layout>;
+
+  const [isSideBarOpen, setIsSideBarOpen] = useState<boolean>(true);
+  
+  return (
+    <div className='bg-[black]'>
+      <TopBar title='Dashboard' isSideBarOpen={isSideBarOpen}></TopBar>
+      <Sidebar onToggleCollapse={async () => {setIsSideBarOpen(!isSideBarOpen)}} isOpen={isSideBarOpen}>
+        test123
+      </Sidebar>
+    </div>
+  );
 }
 
 export default Posts;

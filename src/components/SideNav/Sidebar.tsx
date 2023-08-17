@@ -119,7 +119,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleCollapse }) => {
             
             <div>
                 <div className={'flex items-center cursor-pointer hover:bg-light-lighter rounded w-full overflow-hidden whitespace-nowrap mb-6 mt-6'}>
-                    <div className={classNames('flex py-4 px-3 items-center w-full h-full', toggleCollapse ? 'justify-center' : 'px-8')}>
+                    <div className={classNames('flex py-4 px-3 items-center w-full h-full', toggleCollapse ? 'justify-center' : 'px-10')}>
                         <div>
                             <LogoutIcon />
                         </div>
@@ -136,7 +136,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onToggleCollapse }) => {
                 <div className={'flex items-center cursor-pointer hover:bg-light-lighter rounded w-full overflow-hidden whitespace-nowrap mb-6 mt-6'} 
                     onClick={handleSidebarToggle}
                 >
-                    <div className={classNames('flex py-4 px-3 items-center w-full h-full', toggleCollapse ? 'justify-center' : 'px-8')}>
+                    <div className={classNames('flex py-4 px-3 items-center w-full h-full', toggleCollapse ? 'justify-center' : 'px-10')}>
                         <div>
                             <CollapsIconOutline />
                         </div>

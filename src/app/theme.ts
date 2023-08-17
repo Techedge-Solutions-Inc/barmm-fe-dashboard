@@ -6,7 +6,7 @@ export const manrope = Manrope({
   weight: ['200', '300', '400', '500', '600', '700', '800'],
   subsets: ['latin'],
   // display: 'swap',
-  fallback: ['Manrope, san-serif'],
+  fallback: ['Manrope, san-serif']
 });
 
 // Create a theme instance.
@@ -14,43 +14,42 @@ const theme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#1E57A8',
+      main: '#009865'
     },
     secondary: {
-      main: '#FFC200',
+      main: '#FFC200'
     },
     error: {
-      main: '#D9353E',
-    },
+      main: '#D9353E'
+    }
   },
 
   components: {
     // Name of the component
     MuiFormHelperText: {
       styleOverrides: {
-          // Name of the slot
-          root: {
-            // Some CSS
-            letterSpacing: 'inherit'
-            // height: '3.125rem',
-          },
-        },
-      
-     },
+        // Name of the slot
+        root: {
+          // Some CSS
+          letterSpacing: 'inherit'
+          // height: '2.875rem',
+        }
+      }
+    },
     MuiTextField: {
       styleOverrides: {
         // Name of the slot
         root: {
           // Some CSS
-          borderRadius: '0px !important',
+          borderRadius: '8px !important',
           '&.MuiInputBase-inputMultiline': {
-            height: '100%',
-            
+            height: '100%'
           },
           fontFamily: manrope.style.fontFamily,
-          // height: '3.125rem',
-        },
-      },
+          height: '2.875rem'
+          // border: `1px solid #CACECD`
+        }
+      }
     },
     MuiTablePagination: {
       styleOverrides: {
@@ -60,24 +59,24 @@ const theme = createTheme({
 
           height: '4.5rem',
           display: `grid`,
-          alignItems: `center`,
-        },
-      },
+          alignItems: `center`
+        }
+      }
     },
     MuiInputBase: {
       styleOverrides: {
         // Name of the slot
         root: {
           // Some CSS
-          height: '3.125rem',
-          borderRadius: '0px !important',
+          height: '2.875rem',
+          borderRadius: '8px !important',
           '&.MuiInputBase-multiline': {
-            height: '100%',
+            height: '100%'
           },
-          fontFamily: manrope.style.fontFamily,
-          // height: '3.125rem',
-        },
-      },
+          fontFamily: manrope.style.fontFamily
+          // height: '2.875rem',
+        }
+      }
     },
     MuiListItemButton: {
       styleOverrides: {
@@ -85,16 +84,16 @@ const theme = createTheme({
           backgroundColor: '#fff',
           paddingLeft: '18px',
           '&.Mui-selected': {
-            backgroundColor: '#F2F8FF',
+            backgroundColor: '#F2F8FF'
           },
           '&.Mui-focusVisible': {
-            backgroundColor: '#F2F8FF',
+            backgroundColor: '#F2F8FF'
           },
           ':hover': {
-            backgroundColor: '#F2F8FF',
-          },
-        },
-      },
+            backgroundColor: '#F2F8FF'
+          }
+        }
+      }
     },
     // MuiListItemIcon: {
     //   styleOverrides: {
@@ -108,32 +107,36 @@ const theme = createTheme({
         // Name of the slot
         root: {
           // Some CSS
-          fontSize: '1rem',
-          height: '3.125rem',
-        },
-      },
+          // fontSize: '1rem',
+          borderRadius: '8px !important',
+          fontWeight: 700,
+          fontFamily: manrope.style.fontFamily,
+          textTransform: 'none',
+          height: '3rem'
+        }
+      }
     },
     MuiFormLabel: {
       styleOverrides: {
-        asterisk: { color: 'red' },
-      },
+        asterisk: { color: 'red' }
+      }
     },
     MuiPaper: {
       styleOverrides: {
         root: {
           // Some CSS
-          borderColor: '#fff',
-        },
-      },
-    },
+          borderColor: '#fff'
+        }
+      }
+    }
   },
 
   typography: {
     fontFamily: manrope.style.fontFamily,
     allVariants: {
-      color: '#3D3D3D',
-    },
-  },
+      color: '#3D3D3D'
+    }
+  }
 });
 
 export default theme;

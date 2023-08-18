@@ -1,3 +1,4 @@
+import IncidentTypes from '@/components/IncidentTypes/IncidentTypes';
 import TitleBar from '@/components/TitleBar/TitleBar';
 import PlusIcon from '@/components/icons/PlusIcon';
 import React from 'react';
@@ -7,10 +8,11 @@ const ClaimsCreation = () => {
         <div>
             <TitleBar
                 title='Claim Insurance'
-                titleColor='#9E9E9E'
+                titleColor='#009865'
                 submitBtn='Submit Claim'
                 cancelBtn='Cancel'
             />
+            <IncidentTypes></IncidentTypes>
         </div>
     )
 }

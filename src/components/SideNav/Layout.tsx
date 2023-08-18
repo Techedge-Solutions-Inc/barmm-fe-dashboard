@@ -15,7 +15,7 @@ const Layout: React.FC<LayoutProps> = ({ children, onToggleCollapse, isOpen }) =
       <div className="mx-[20px] mt-[20px] absolute top-0">
         <Sidebar onToggleCollapse={onToggleCollapse}/>
       </div>
-      <div className={classNames('bg-primary flex-1 p-4 text-white', isOpen ? 'pl-[370px]' : 'pl-[150px]')}
+      <div className={classNames('bg-lightGreen flex-1 p-4 text-white overflow-scroll', isOpen ? 'pl-[373px]' : 'pl-[150px]')}
         style={{ transition: "width 300ms cubic-bezier(0.2, 0, 0, 1) 0s" }}
       >
           {children}

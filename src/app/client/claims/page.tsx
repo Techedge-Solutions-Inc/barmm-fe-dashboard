@@ -5,7 +5,7 @@ import React, {useState} from 'react';
 const Claims = () => {
     const [isCreation, setIsCreation] = useState<boolean>(true);
     return (
-        <div className='border-2 border-black'>
+        <div>
             {!isCreation ?
                 'Claims Table'
                 :

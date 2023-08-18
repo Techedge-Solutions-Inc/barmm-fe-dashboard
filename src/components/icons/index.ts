@@ -46,6 +46,12 @@ export { default as VideosIcon } from "./VideosIcon";
 export { default as CollapsIcon } from "./CollapsIcon";
 export { default as LogoIcon } from "./Logo";
 export { default as ShieldIcon } from "./ShieldIcon";
+export { default as DeathIcon } from "./DeathIcon";
+export { default as InjuryIcon } from "./InjuryIcon";
+export { default as DisablementIcon } from "./DisablementIcon";
+export { default as OthersIcon } from "./OthersIcon";
+
+
 
 
 

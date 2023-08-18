@@ -46,28 +46,39 @@ a {
 // Status Options
 .status-option {
   .new {
-    color: #338DA8;
-    border: 1px solid #338DA8;
-    background: #D4F5FF;
+    color: #338da8;
+    border: 1px solid #338da8;
+    background: #d4f5ff;
   }
   .released {
-    color: #FFF;
+    color: #fff;
     border-color: #009865;
     background-color: #009865;
   }
   .approved {
-    color: #2B822E;
-    border-color: #2B822E;
-    background-color: #D9F8DA;
+    color: #2b822e;
+    border-color: #2b822e;
+    background-color: #d9f8da;
   }
   .in-review {
-    color: #EB7C17;
-    border-color: #EB7C17;
-    background-color: #FFF3C9;
+    color: #eb7c17;
+    border-color: #eb7c17;
+    background-color: #fff3c9;
   }
   .rejected {
-    color: #D81515;
-    border-color: #D81515;
-    background-color: #FBDEDE;
+    color: #d81515;
+    border-color: #d81515;
+    background-color: #fbdede;
   }
+}
+.pagination-custom {
+  .MuiPaginationItem-previousNext {
+    margin: 0 50px !important;
+  }
+}
+
+
+.MuiTableRow-root:last-child th, 
+.MuiTableRow-root:last-child td {
+  border-bottom-width: 2px ;
 }

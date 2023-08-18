@@ -1,17 +1,26 @@
 'use client';
+import React, { Fragment, useState } from 'react'
+import { NextPage } from 'next';
+import _ from 'lodash';
+import ListOfClaimsTable from '@/components/ClientCTPL/claims/listOfClaimsTable';
 import ClaimsCreation from '@/components/ClientCTPL/claims/Creation';
-import React, {useState} from 'react';
 
-const Claims = () => {
+export type Props = {
+
+}
+
+
+const Claims: NextPage<Props> = ({ }) => {
     const [isCreation, setIsCreation] = useState<boolean>(true);
     return (
-        <div>
+        <Fragment>
             {!isCreation ?
-                'Claims Table'
+                <ListOfClaimsTable />
                 :
-                <ClaimsCreation/>
+                <ClaimsCreation />
             }
-        </div>
+
+        </Fragment>
     )
 }
 

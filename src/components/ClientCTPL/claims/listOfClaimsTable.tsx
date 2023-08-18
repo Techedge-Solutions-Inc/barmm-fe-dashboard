@@ -9,8 +9,10 @@ import _ from 'lodash';
 
 
 export type Props = {
-
+    onClick: (data: boolean) => void;
+    value: boolean;
 }
+
 
 
 interface Column {
@@ -193,9 +195,9 @@ const rows: any = [
         status: 'released',
     },];
 
-const ListOfClaimsTable: NextPage<Props> = ({ }) => {
+const ListOfClaimsTable: NextPage<Props> = ({ onClick, value }) => {
 
-    const [page, setPage] = React.useState(0);
+    const [page, setPage] = React.useState(0); 2
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
     const handleChangePage = (event: unknown, newPage: number) => {
@@ -216,6 +218,10 @@ const ListOfClaimsTable: NextPage<Props> = ({ }) => {
                     // policyNumber='87654356782'
                     // policyNumberColor='#009865'
                     submitBtn='Claim Insurance'
+                    onSubmit={() => {
+                        debugger
+                        onClick(!value)
+                    }}
                     submitBtnIcon={<PlusIcon />}
                 // cancelBtn='Cancel'
                 // status='in-review'

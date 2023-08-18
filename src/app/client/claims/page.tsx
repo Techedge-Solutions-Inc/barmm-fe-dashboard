@@ -2,7 +2,7 @@
 import React, { Fragment, useState } from 'react'
 import { NextPage } from 'next';
 import _ from 'lodash';
-import ListOfClaimsTable from '@/components/ClientCTPL/claims/listOfClaimsTable';
+import ListOfClaimsTable from '@/components/ClientCTPL/claims/ListOfClaimsTable';
 import ClaimsCreation from '@/components/ClientCTPL/claims/Creation';
 
 export type Props = {
@@ -11,11 +11,16 @@ export type Props = {
 
 
 const Claims: NextPage<Props> = ({ }) => {
-    const [isCreation, setIsCreation] = useState<boolean>(true);
+    const [isCreation, setIsCreation] = useState<boolean>(false);
+
+    const handleClick = (value: boolean) => {
+        debugger
+        setIsCreation(value)
+    }
     return (
         <Fragment>
             {!isCreation ?
-                <ListOfClaimsTable />
+                <ListOfClaimsTable onClick={handleClick} value={isCreation} />
                 :
                 <ClaimsCreation />
             }

@@ -11,8 +11,8 @@ interface TitleBarProps {
     cancelBtnIcon?: React.ReactNode;
     submitBtn?: string;
     submitBtnIcon?: React.ReactNode;
-    onCancel?: () => {};
-    onSubmit?: () => {};
+    onCancel?: () => void;
+    onSubmit?: () => void;
 };
 
 const TitleBar: React.FC<TitleBarProps> = ({
@@ -45,12 +45,12 @@ const TitleBar: React.FC<TitleBarProps> = ({
 
             <div className='col-span-12 xl:col-span-6 xl:justify-end mt-2 xl:mt-0 flex gap-4'>
                 {cancelBtn &&
-                    <Button variant="outlined" disableElevation type='submit' className='w-[200px]'>
+                    <Button variant="outlined" disableElevation type='submit' className='w-[200px]' onClick={onCancel}>
                         {cancelBtnIcon} <span className='ml-2'>{cancelBtn}</span>
                     </Button>
                 }
                 {submitBtn &&
-                    <Button variant="contained" disableElevation type='submit' className='w-[200px]'>
+                    <Button variant="contained" disableElevation type='submit' className='w-[200px]' onClick={onSubmit}>
                         {submitBtnIcon} <span className='ml-2'>{submitBtn}</span>
                     </Button>
                 }

@@ -41,7 +41,6 @@ const TitleBar: React.FC<TitleBarProps> = ({
                         <Chip label={status} variant="outlined" className={status} />
                     </div>
                 }
-
             </div>
 
             <div className='col-span-12 xl:col-span-6 xl:justify-end mt-2 xl:mt-0 flex gap-4'>

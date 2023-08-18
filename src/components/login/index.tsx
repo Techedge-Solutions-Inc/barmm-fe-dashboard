@@ -121,7 +121,7 @@ const Home: NextPage<Props> = ({
                             Login
                         </Button>
                         <picture className='flex items-center justify-center'>
-                            <img src='/images/barmm-logo.png' />
+                            <img src='/images/barmm-logo.png' alt='logo' />
                         </picture>
                     </div>
                 </div>

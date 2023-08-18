@@ -1,5 +1,5 @@
 import { Manrope } from 'next/font/google';
-import { createTheme } from '@mui/material/styles';
+import { createTheme, Theme } from '@mui/material/styles';
 import { red } from '@mui/material/colors';
 
 export const manrope = Manrope({
@@ -10,7 +10,7 @@ export const manrope = Manrope({
 });
 
 // Create a theme instance.
-const theme = createTheme({
+const theme: Theme = createTheme({
   palette: {
     mode: 'light',
     primary: {
@@ -25,6 +25,17 @@ const theme = createTheme({
   },
 
   components: {
+    MuiChip: {
+      styleOverrides: {
+        // Name of the slot
+        root: {
+          // Some CSS
+          fontWeight: 700,
+          fontSize: 11
+          // height: '2.875rem',
+        }
+      }
+    },
     // Name of the component
     MuiFormHelperText: {
       styleOverrides: {
@@ -112,7 +123,16 @@ const theme = createTheme({
           fontWeight: 700,
           fontFamily: manrope.style.fontFamily,
           textTransform: 'none',
-          height: '3rem'
+          height: '3rem',
+          whiteSpace: 'nowrap',
+          minWidth: `auto`, 
+          '& .MuiButton-label': {
+            textOverflow: 'ellipsis',
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            textAlign: 'left',
+            display: 'block'
+          }
         }
       }
     },
@@ -134,7 +154,7 @@ const theme = createTheme({
   typography: {
     fontFamily: manrope.style.fontFamily,
     allVariants: {
-      color: '#3D3D3D'
+      // color: '#3D3D3D'
     }
   }
 });

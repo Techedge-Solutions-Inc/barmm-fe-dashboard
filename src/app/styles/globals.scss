@@ -30,8 +30,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  // font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  //   Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -41,4 +41,33 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+// Status Options
+.status-option {
+  .new {
+    color: #338DA8;
+    border: 1px solid #338DA8;
+    background: #D4F5FF;
+  }
+  .released {
+    color: #FFF;
+    border-color: #009865;
+    background-color: #009865;
+  }
+  .approved {
+    color: #2B822E;
+    border-color: #2B822E;
+    background-color: #D9F8DA;
+  }
+  .in-review {
+    color: #EB7C17;
+    border-color: #EB7C17;
+    background-color: #FFF3C9;
+  }
+  .rejected {
+    color: #D81515;
+    border-color: #D81515;
+    background-color: #FBDEDE;
+  }
 }

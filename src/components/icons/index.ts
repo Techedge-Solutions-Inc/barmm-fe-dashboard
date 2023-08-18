@@ -35,6 +35,10 @@ export { default as DashboardActiveIcon } from './DashboardActiveIcon';
 export { default as NotifCheck } from './NotifCheck';
 export { default as NotifCheckInfo } from './NotifCheckInfo';
 export { default as NotifCheckError } from './NotifCheckError';
+export { default as GuardCheckIcon } from './GuardCheckIcon';
+export { default as AutoInsuranceImage } from './AutoInsuranceImage';
+export { default as DownloadIcon } from './DownloadIcon';
+
 
 export { default as ArticleIcon } from "./ArticleIcon";
 export { default as HomeIcon } from "./HomeIcon";

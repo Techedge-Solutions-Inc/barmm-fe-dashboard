@@ -2,6 +2,7 @@ import type { Config } from 'tailwindcss';
 import defaultTheme from 'tailwindcss/defaultConfig';
 
 const config: Config = {
+  mode:'jit',
   // add this section to resolve
   corePlugins: {
     preflight: true
@@ -15,8 +16,11 @@ const config: Config = {
     ...defaultTheme.theme,
     colors: {
       ...defaultTheme.colors,
-      primary: '#3B81F6',
+
+      primary: '#009865',
       white: '#ffffff',
+      lightGreen: '#E9ECEF',
+      black: '#212121',
       text: {
         DEFAULT: '#1F2937',
         light: '#6C7281'

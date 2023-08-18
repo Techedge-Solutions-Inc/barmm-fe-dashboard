@@ -26,15 +26,21 @@ const TitleBar:React.FC<TitleBarProps> = ({
                 }}>
                     {title}
                 </div>
-                <div className='text-[#9E9E9E] text-[18px] md:text-[24px] font-[700] mx-2'>/</div>
-                <div className='text-[18px] md:text-[24px] font-[700]' style={{
-                    color: policyNumberColor
-                }}>
-                    {policyNumber}
-                </div>
-                <div className='ml-4 -mt-1 md:mt-1 status-option'>
-                    <Chip label={status} variant="outlined" className={status} />
-                </div>
+                {policyNumber &&
+                    <div>
+                        <div className='text-[#9E9E9E] text-[18px] md:text-[24px] font-[700] mx-2'>/</div>
+                        <div className='text-[18px] md:text-[24px] font-[700]' style={{
+                            color: policyNumberColor
+                        }}>
+                            {policyNumber}
+                        </div>
+                    </div>
+                }
+                {status &&
+                    <div className='ml-4 -mt-1 md:mt-1 status-option'>
+                        <Chip label={status} variant="outlined" className={status} />
+                    </div>
+                }
             </div>
 
             <div className='col-span-12 xl:col-span-6 xl:justify-end mt-2 xl:mt-0 flex gap-4'>

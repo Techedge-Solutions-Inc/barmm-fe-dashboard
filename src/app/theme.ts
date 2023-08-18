@@ -21,7 +21,7 @@ const theme: Theme = createTheme({
     },
     error: {
       main: '#D9353E'
-    }
+    },
   },
 
   components: {

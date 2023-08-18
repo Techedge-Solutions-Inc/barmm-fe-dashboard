@@ -6,16 +6,9 @@ import PlusIcon from '@/components/icons/PlusIcon';
 
 const Home = () => {
     return (
-        <TitleBar
-            title='Transaction History'
-            titleColor='#9E9E9E'
-            policyNumber='87654356782'
-            policyNumberColor='#009865'
-            submitBtn='Claim Insurance'
-            submitBtnIcon={<PlusIcon/>}
-            cancelBtn='Cancel'
-            status='in-review'
-        ></TitleBar>
+        <div>
+            test
+        </div>
     );
 };
 

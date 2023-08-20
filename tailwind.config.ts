@@ -20,6 +20,7 @@ const config: Config = {
       primary: '#009865',
       white: '#ffffff',
       lightGreen: '#E9ECEF',
+      gray: '#F4F4F4',
       black: '#212121',
       text: {
         DEFAULT: '#1F2937',

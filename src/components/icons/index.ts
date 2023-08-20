@@ -38,34 +38,17 @@ export { default as NotifCheckError } from './NotifCheckError';
 export { default as GuardCheckIcon } from './GuardCheckIcon';
 export { default as AutoInsuranceImage } from './AutoInsuranceImage';
 export { default as DownloadIcon } from './DownloadIcon';
+export { default as UploadIcon } from './UploadIcon';
+export { default as CloseIconCircle } from './CloseIconCircle';
+export { default as DocsIcon } from './DocsIcon';
 
-
-export { default as ArticleIcon } from "./ArticleIcon";
-export { default as HomeIcon } from "./HomeIcon";
-export { default as VideosIcon } from "./VideosIcon";
-export { default as CollapsIcon } from "./CollapsIcon";
-export { default as LogoIcon } from "./Logo";
-export { default as ShieldIcon } from "./ShieldIcon";
-export { default as DeathIcon } from "./DeathIcon";
-export { default as InjuryIcon } from "./InjuryIcon";
-export { default as DisablementIcon } from "./DisablementIcon";
-export { default as OthersIcon } from "./OthersIcon";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export { default as ArticleIcon } from './ArticleIcon';
+export { default as HomeIcon } from './HomeIcon';
+export { default as VideosIcon } from './VideosIcon';
+export { default as CollapsIcon } from './CollapsIcon';
+export { default as LogoIcon } from './Logo';
+export { default as ShieldIcon } from './ShieldIcon';
+export { default as DeathIcon } from './DeathIcon';
+export { default as InjuryIcon } from './InjuryIcon';
+export { default as DisablementIcon } from './DisablementIcon';
+export { default as OthersIcon } from './OthersIcon';

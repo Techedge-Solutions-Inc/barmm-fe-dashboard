@@ -14,7 +14,7 @@ const Claims: NextPage<Props> = ({ }) => {
     const [isCreation, setIsCreation] = useState<boolean>(false);
 
     const handleClick = (value: boolean) => {
-        debugger
+
         setIsCreation(value)
     }
     return (

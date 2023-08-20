@@ -219,7 +219,7 @@ const ListOfClaimsTable: NextPage<Props> = ({ onClick, value }) => {
                     // policyNumberColor='#009865'
                     submitBtn='Claim Insurance'
                     onSubmit={() => {
-                        debugger
+                        
                         onClick(!value)
                     }}
                     submitBtnIcon={<PlusIcon />}
@@ -250,7 +250,7 @@ const ListOfClaimsTable: NextPage<Props> = ({ onClick, value }) => {
                                 .map((row: any) => {
 
                                     return (
-                                        <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                                        <TableRow hover role="checkbox" tabIndex={-1} key={row.id}>
                                             {columns.map((column) => {
                                                 const value = row[column.id];
 

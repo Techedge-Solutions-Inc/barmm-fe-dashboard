@@ -77,8 +77,22 @@ a {
   }
 }
 
-
-.MuiTableRow-root:last-child th, 
+.MuiTableRow-root:last-child th,
 .MuiTableRow-root:last-child td {
-  border-bottom-width: 2px ;
+  border-bottom-width: 2px;
+}
+
+.scrolling-wrapper {
+  display: flex;
+  flex-wrap: nowrap; // Ensures the children don't wrap to the next line
+  overflow-x: auto; // Enables horizontal scrolling
+  width: 100%; // Ensures it takes up the full width of its parent (you can adjust this)
+}
+
+.card {
+  flex: 0 0 auto;
+  margin-right: 10px; // Optionally add some spacing between cards
+  overflow: hidden; // Ensures content of card doesn't overflow
+  border-radius: 8px;
+  border: 1px solid #ebebeb;
 }

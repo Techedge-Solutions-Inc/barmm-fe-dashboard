@@ -96,3 +96,11 @@ a {
   border-radius: 8px;
   border: 1px solid #ebebeb;
 }
+
+.status-card {
+  .MuiButtonBase-root {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19.12px;
+  }
+}

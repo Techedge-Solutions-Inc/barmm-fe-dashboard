@@ -30,7 +30,7 @@ const qrCode = new QRCodeStyling({
 const QRCode: React.FC<QRCodeProps> = ({
     url
 }) => {
-
+    console.log(url);
     const ref = useRef(null);
 
     useEffect(() => {

@@ -60,7 +60,7 @@ const DynamicQRCode = dynamic(() => import('../QRCode/index'), {
 });
 
 const ClaimStatuses: React.FC<ClaimStatusesProps> = ({
-    amountReleased = '86,475.92', statuses = statusesData, qrCodeUrl = 'https://qr-code-styling.com', status, claims
+    amountReleased = '86,475.92', statuses = statusesData, qrCodeUrl, status, claims
 }) => {
 
     const style = {
@@ -128,7 +128,7 @@ const ClaimStatuses: React.FC<ClaimStatusesProps> = ({
                     {/* End of Status History */}
                 </>
             }
-            {status == 'APPROVED' || 'RELEASED' &&
+            {status == 'APPROVED' || status == 'RELEASED' ?
                 <>
                     {/* Approved View */}
                     <div className='max-w-[388px] h-[563px] px-8 py-5 relative mt-6' style={style}>
@@ -148,7 +148,7 @@ const ClaimStatuses: React.FC<ClaimStatusesProps> = ({
                                 </div>
                                 <div className='flex flex-col jsutify-center items-center mt-5 border-[1px] border-[#E9E9E9] py-8 rounded-[5px]'>
                                     <img src={barmmQrLogo.src} className='mb-5' />
-                                    <DynamicQRCode url='https://www.facebook.com'/>
+                                    <DynamicQRCode url={qrCodeUrl}/>
                                     <div>
                                         <div className='font-[700] text-[24px] leading-[32.78px] text-primary mt-2 text-center'>
                                             {claims?.referenceNo}
@@ -199,6 +199,7 @@ const ClaimStatuses: React.FC<ClaimStatusesProps> = ({
                         }
                     </div>
                 </>
+                : <></>
             }
         </div>
     );

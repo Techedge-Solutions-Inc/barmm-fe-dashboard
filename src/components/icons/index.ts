@@ -52,3 +52,5 @@ export { default as DeathIcon } from './DeathIcon';
 export { default as InjuryIcon } from './InjuryIcon';
 export { default as DisablementIcon } from './DisablementIcon';
 export { default as OthersIcon } from './OthersIcon';
+export { default as QRIcon } from './QRIcon';
+
